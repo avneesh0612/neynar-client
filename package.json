@@ -1,0 +1,29 @@
+{
+  "name": "feed",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@neynar/nodejs-sdk": "^1.50.0",
+    "@neynar/react": "^0.9.3",
+    "@pigment-css/react": "^0.0.22",
+    "hls.js": "^1.5.15",
+    "next": "14.2.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/node": "^22.5.3",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10"
+  }
+}
