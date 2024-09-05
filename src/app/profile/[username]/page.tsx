@@ -23,7 +23,7 @@ export default async function Page({
           fid={user.fid}
           fids={`${user.fid}`}
           withRecasts={false}
-          
+          limit={50}
         />
       </div>
     </main>

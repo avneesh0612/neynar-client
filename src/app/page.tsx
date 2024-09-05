@@ -39,15 +39,6 @@ export default function Home() {
         </div>
       </div>
 
-      <NeynarFeedList
-        feedType="filter"
-        channelId="dev"
-        viewerFid={2}
-        fid={2}
-        limit={50}
-        filterType="channel_id"
-      />
-
       <div className="flex flex-col gap-6 ml-40">
         <NeynarFeedList
           feedType={user?.fid ? "following" : "filter"}
