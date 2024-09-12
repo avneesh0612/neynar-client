@@ -10,7 +10,7 @@ export const Header: FC = () => {
   const router = useRouter();
 
   return (
-    <div className="flex items-center justify-between pt-4 px-16 text-white">
+    <div className="flex items-center justify-between px-16 pt-4 text-white">
       <Link href="/" className="text-3xl font-bold">
         NeynarClient
       </Link>
@@ -19,7 +19,7 @@ export const Header: FC = () => {
         <input
           type="text"
           placeholder="Go to profile"
-          className="p-2 rounded-lg text-black"
+          className="rounded-lg p-2 text-black"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -28,13 +28,13 @@ export const Header: FC = () => {
             console.log("searching for", username);
             router.push(`/profile/${username}`);
           }}
-          className="p-2 rounded-lg bg-blue-500"
+          className="rounded-lg bg-blue-500 p-2"
         >
           Search
         </button>
       </div>
 
-      <NeynarAuthButton className="top-4 right-4" />
+      <NeynarAuthButton className="right-4 top-4" />
     </div>
   );
 };

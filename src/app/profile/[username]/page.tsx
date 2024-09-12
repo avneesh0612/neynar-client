@@ -15,9 +15,9 @@ export default async function Page({
   const { user } = await getData(username);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 w-full">
+    <main className="flex min-h-screen w-full flex-col items-center justify-between p-24">
       <NeynarProfileCard fid={user.fid} />
-      <div className="flex items-center mt-4">
+      <div className="mt-4 flex items-center">
         <NeynarFeedList
           feedType="filter"
           fid={user.fid}

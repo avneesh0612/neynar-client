@@ -1,31 +1,18 @@
+import neynarClient from "@/lib/neynarClient";
 import { NextResponse } from "next/server";
 
-export const GET = async (req: Request, res: Response) => {
-  const { searchParams } = new URL(req.url);
-  const fid = searchParams.get("fid");
+export const GET = async (req: Request) => {
+  try {
+    const { searchParams } = new URL(req.url);
+    const fid = searchParams.get("fid");
 
-  const url = `https://api.neynar.com/v2/farcaster/user/channels?fid=${fid}&limit=25`;
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      api_key: process.env.NEYNAR_API_KEY!,
-    },
-  };
+    const channels = await neynarClient.fetchUserChannels(Number(fid));
 
-  const response = await fetch(url, options);
-
-  if (!response.ok) {
+    return NextResponse.json(channels, { status: 200 });
+  } catch (error) {
     return NextResponse.json(
-      { error: "Failed to fetch channel" },
-      { status: 500 }
+      { error: (error as Error).message },
+      { status: 500 },
     );
   }
-
-  return NextResponse.json(
-    {
-      channel: await response.json(),
-    },
-    { status: 200 }
-  );
 };

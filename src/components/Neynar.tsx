@@ -1,10 +1,5 @@
 "use client";
 
-import {
-  NeynarAuthButton,
-  NeynarProfileCard,
-  NeynarCastCard,
-  NeynarFeedList,
-} from "@neynar/react";
+import { NeynarProfileCard, NeynarFeedList } from "@neynar/react";
 
-export { NeynarAuthButton, NeynarProfileCard, NeynarCastCard, NeynarFeedList };
+export { NeynarProfileCard, NeynarFeedList };
