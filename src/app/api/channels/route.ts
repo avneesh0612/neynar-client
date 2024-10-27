@@ -11,8 +11,8 @@ export const GET = async (req: Request) => {
     return NextResponse.json(channels, { status: 200 });
   } catch (error) {
     return NextResponse.json(
-      { error: (error as Error).message },
-      { status: 500 },
+      { error: (error as any).response.data.message },
+      { status: (error as any).response?.status || 500 }
     );
   }
 };

@@ -14,7 +14,7 @@ export default function Home() {
       return;
     }
 
-    const response = await fetch(`/api/channels?fid=${user?.fid}`);
+    const response = await fetch(`/api/channels?fid=abc${user?.fid}`);
     const data = await response.json();
     setChannels(data);
   };
